@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/boshop-banner.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>BO SHOP</ion-card-subtitle>
+      <ion-card-title>Welcome to Boshop</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>New </p>
+      <p>Free ship h?a ??n > 100k</p>
+      <p>Ph?t hi?n gi? ho?n ti?n 100%</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>DEALS ?ANG DI?N RA</ion-label>
+    </ion-list-header>
+    <div *ngFor="let cat of items" class="category-block">
+      <ion-row no-padding class="category-banner">
+        <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+          {{cat.category}}
+        </ion-col>
+      </ion-row>
+      <ion-slides [options]="sliderConfig">
+        <ion-slide *ngFor="let product of cat.products">
+          products 11
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <ion-item href="https://ionicframework.com/docs/">
+      <ion-icon slot="start" color="medium" name="book"></ion-icon>
+      <ion-label>N??c Hoa H?ng</ion-label>
+      <ion-label>Geo S?a ch?ng n?ng</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
