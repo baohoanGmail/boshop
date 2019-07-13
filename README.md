@@ -1,1 +1,1 @@
-# boshop
+# bo-shopping-cart
